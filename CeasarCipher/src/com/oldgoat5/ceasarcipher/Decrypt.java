@@ -99,7 +99,6 @@ public class Decrypt extends Activity
                 PrintWriter writer;
                 
                 output = new File("/storage/extSdCard/output_decrypt.txt");
-                
                 try
                 {
                     writer = new PrintWriter(output);

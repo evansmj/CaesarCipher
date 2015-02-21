@@ -9,8 +9,10 @@ import java.util.Scanner;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -95,14 +97,22 @@ public class Encrypt extends Activity
             @Override
             public void onClick(View v)
             {
-                File output;
+                File outputFile;
                 PrintWriter writer;
                 
-                output = new File("/storage/extSdCard/output_encrypt.txt");
+                outputFile = new File(Environment.getExternalStorageDirectory()
+                        .getAbsoluteFile(), "output_encrypt.txt");
                 try
                 {
-                    writer = new PrintWriter(output);
+                    writer = new PrintWriter(outputFile);
                     writer.write(outputTextView.getText().toString());
+                    //TODO 
+                    //fix it not writing
+                    //report new location, due to google.
+                    
+                    Log.d("outputTextButton", "inside try after write");
+                    Log.d("Environmet.getExtDir.getAbsFile()", Environment.getExternalStorageDirectory()
+                        .getAbsoluteFile().toString());
                 }
                 catch (FileNotFoundException e)
                 {
