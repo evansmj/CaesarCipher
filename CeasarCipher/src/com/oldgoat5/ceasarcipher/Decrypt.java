@@ -121,10 +121,8 @@ public class Decrypt extends Activity
      * @param requestCode - The integer request code originally supplied
      *  to startActivityForResult(), allowing you to identify who this 
      *  result came from.
-     *  
      * @param resultCode - The integer result code returned by the 
      *  child activity through its setResult().
-     *  
      * @param data - An Intent, which can return result data to the 
      *  caller (various data can be attached to Intent "extras").
      ******************************************************************/

@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -113,6 +112,8 @@ public class Encrypt extends Activity
                     Log.d("outputTextButton", "inside try after write");
                     Log.d("Environmet.getExtDir.getAbsFile()", Environment.getExternalStorageDirectory()
                         .getAbsoluteFile().toString());
+                    Log.d("outputTextView.getText().toString(): ", 
+                            outputTextView.getText().toString());
                 }
                 catch (FileNotFoundException e)
                 {
@@ -131,10 +132,8 @@ public class Encrypt extends Activity
      * @param requestCode - The integer request code originally supplied
      *  to startActivityForResult(), allowing you to identify who this 
      *  result came from.
-     *  
      * @param resultCode - The integer result code returned by the 
      *  child activity through its setResult().
-     *  
      * @param data - An Intent, which can return result data to the 
      *  caller (various data can be attached to Intent "extras").
      ******************************************************************/
