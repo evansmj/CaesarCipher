@@ -128,7 +128,7 @@ public class Encrypt extends Activity
      * If an input file location is returned by the file browser
      * activity, set the given file path and display the file path in 
      * the text view (R.id.fileEncryptTextView).
-     * 
+     *  
      * @param requestCode - The integer request code originally supplied
      *  to startActivityForResult(), allowing you to identify who this 
      *  result came from.
