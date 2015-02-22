@@ -108,12 +108,14 @@ public class Encrypt extends Activity
                     writer = new FileWriter(outputFile);
                     writer.write(outputTextView.getText().toString());
                     writer.close();
-                    //TODO 
-                    //fix it not writing
-                    //report new location, due to google.
-                    
+                    outputText += "\nThis output has been saved to: " + 
+                            Environment.getExternalStorageDirectory()
+                            .getAbsoluteFile().toString() + 
+                            "/output_encrypt.txt";
+                    outputTextView.setText(outputText);
                     Log.d("outputTextButton", "inside try after write");
-                    Log.d("Environmet.getExtDir.getAbsFile()", Environment.getExternalStorageDirectory()
+                    Log.d("Environmet.getExtDir.getAbsFile()", 
+                        Environment.getExternalStorageDirectory()
                         .getAbsoluteFile().toString());
                     Log.d("outputTextView.getText().toString(): ", 
                             outputTextView.getText().toString());

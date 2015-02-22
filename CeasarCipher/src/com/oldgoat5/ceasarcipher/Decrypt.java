@@ -2,6 +2,8 @@ package com.oldgoat5.ceasarcipher;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +13,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -95,16 +98,23 @@ public class Decrypt extends Activity
             @Override
             public void onClick(View v)
             {
-                File output;
-                PrintWriter writer;
+                File outputFile;
+                FileWriter writer;
                 
-                output = new File("/storage/extSdCard/output_decrypt.txt");
+                outputFile = new File(Environment.getExternalStorageDirectory()
+                        .getAbsoluteFile(), "output_decrypt.txt");
                 try
                 {
-                    writer = new PrintWriter(output);
+                    writer = new FileWriter(outputFile);
                     writer.write(outputTextView.getText().toString());
+                    writer.close();
+                    outputText += "\nThis output has been saved to: " + 
+                            Environment.getExternalStorageDirectory()
+                            .getAbsoluteFile().toString() + 
+                            "/output_decrypt.txt";
+                    outputTextView.setText(outputText);
                 }
-                catch (FileNotFoundException e)
+                catch (IOException e)
                 {
                     outputText += "\n" + e.getMessage();
                     outputTextView.setText(outputText);
