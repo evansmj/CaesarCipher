@@ -24,7 +24,7 @@ import android.widget.TextView;
  * This class contains the activity for encrypting a message.  A valid 
  * message string can only contain uppercase, lowercase, and whitespace 
  * characters.  A shift number can be an integer from 0 - 25.
- * 
+ *  
  * The message and shift number can be typed into the program 
  * ((R.id.inputEncryptEditText), (R.id.shiftNumberEditText)),
  * or read from a text file (R.id.fileSelectButton). 
