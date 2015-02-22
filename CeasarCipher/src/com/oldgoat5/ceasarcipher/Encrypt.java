@@ -2,6 +2,8 @@ package com.oldgoat5.ceasarcipher;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,14 +99,15 @@ public class Encrypt extends Activity
             public void onClick(View v)
             {
                 File outputFile;
-                PrintWriter writer;
+                FileWriter writer;
                 
                 outputFile = new File(Environment.getExternalStorageDirectory()
                         .getAbsoluteFile(), "output_encrypt.txt");
                 try
                 {
-                    writer = new PrintWriter(outputFile);
+                    writer = new FileWriter(outputFile);
                     writer.write(outputTextView.getText().toString());
+                    writer.close();
                     //TODO 
                     //fix it not writing
                     //report new location, due to google.
@@ -115,7 +118,7 @@ public class Encrypt extends Activity
                     Log.d("outputTextView.getText().toString(): ", 
                             outputTextView.getText().toString());
                 }
-                catch (FileNotFoundException e)
+                catch (IOException e)
                 {
                     outputText += "\n" + e.getMessage();
                     outputTextView.setText(outputText);
