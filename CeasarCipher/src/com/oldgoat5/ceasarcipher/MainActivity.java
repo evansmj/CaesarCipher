@@ -10,10 +10,7 @@ import android.widget.Button;
  * @author Michael Evans
  * @version 9/28/2014
  * 
- * Programming Assignment No. 1 CaesarCipher
- * CS 228 Section 2
- * 
- * This program complies with the JMU Honor Code
+ * Implements a basic Caesar Cipher.  
  ***********************************************************************/
 public class MainActivity extends Activity
 {

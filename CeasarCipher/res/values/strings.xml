@@ -2,8 +2,13 @@
 <resources>
 
     <string name="app_name">CaesarCipher</string>
-    <string name="app_description">Programming Assignment No. 1: Caesar Cipher 
-    	by Michael Evans.
+    <string name="app_description">This is a basic Caesar Cipher.\n\nFor 
+        encrypting, a valid message string can only contain uppercase, 
+        lowercase, and whitespace characters.  
+        A shift number can be an integer from 0 - 25.
+        \n\nFor decrypting, a valid message string can only contain uppercase 
+        characters and no whitespace.  A shift number can be an integer 
+        from 0 - 25.
     </string>
     <string name="hello_world">Hello world!</string>
     
