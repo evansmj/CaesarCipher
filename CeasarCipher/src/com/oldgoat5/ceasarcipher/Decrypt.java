@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**********************************************************************
  * This class contains the activity for decrypting a message.  A valid 
@@ -86,9 +87,21 @@ public class Decrypt extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("file/*");
-                startActivityForResult(intent, CONST_RESULT);
+                try 
+                {
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("file/*");
+                    startActivityForResult(intent, CONST_RESULT);
+                }
+                catch (ActivityNotFoundException e)
+                {
+                    Log.d("Decrypt.java file select listener",
+                            e.getLocalizedMessage());
+                    Toast toast = Toast.makeText(getApplicationContext(), 
+                            "No file browser was found on your device.",
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
        
