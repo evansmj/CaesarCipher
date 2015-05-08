@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CaesarCipher</string>
+    <string name="app_description">This is a basic Caesar Cipher.\n\nFor 
+        encrypting, a valid message string can only contain uppercase, 
+        lowercase, and whitespace characters.  
+        A shift number can be an integer from 0 - 25.
+        \n\nFor decrypting, a valid message string can only contain uppercase 
+        characters and no whitespace.  A shift number can be an integer 
+        from 0 - 25.
+    </string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string-array name="items">
+        <item>Encrypt</item>
+        <item>Decrypt</item>
+    </string-array>
+    
+    <string name="action_encrypt">Encrypt</string>
+    <string name="encrypt_title">Encrypting Mode</string>
+    
+	<string name="action_decrypt">Decrypt</string>
+	<string name="decrypt_title">Decrypting Mode</string>
+	
+	<string name="encrypt_input_decription">Enter message to encrypt:</string>
+    <string name="encrypt_input_shift">Enter shift number:</string>
+    <string name="encrypt_input_file">Select file to encrypt:</string>
+    <string name="encrypt_input_button">Select</string>
+	<string name="encrypt_input_no_file_selected">(No File Selected)</string>
+	
+	<string name="encrypt_start_button">Encrypt</string>
+	
+	<string name="encrypt_output_text_file">Output to Text File</string>
+	<string name="encrypt_output_text_saved">(Output Saved)</string>
+	
+
+	<string name="decrypt_input_decription">Enter message to decrypt:</string>
+    <string name="decrypt_input_shift">Enter shift number:</string>
+    <string name="decrypt_input_file">Select file to decrypt:</string>
+    <string name="decrypt_input_button">Select</string>
+	<string name="decrypt_input_no_file_selected">(No File Selected)</string>
+	
+	<string name="decrypt_start_button">Decrypt</string>
+	
+	<string name="decrypt_output_text_file">Output to Text File</string>
+	<string name="decrypt_output_text_saved">(Output Saved)</string>
+	
+</resources>
